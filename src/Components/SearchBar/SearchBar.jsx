@@ -1,5 +1,6 @@
 import { GoSearch } from 'react-icons/go';
 import toast, { Toaster } from 'react-hot-toast';
+
 const notify = () =>
   toast("query cann't be empty.", {
     duration: 3000,
@@ -33,7 +34,6 @@ const SearchBar = ({ onSubmit }) => {
                 return;
               }
 
-              console.log(value);
               onSubmit(value);
               e.target.reset();
             }}
