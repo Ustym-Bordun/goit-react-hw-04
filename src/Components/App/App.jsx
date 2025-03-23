@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import { nanoid } from 'nanoid';
+
+import fetchPhotos from '../../service/imageApi';
 
 import Section from '../Section/Section';
 import Container from '../Container/Container';
-
-import fetchPhotos from '../../service/imageApi';
 
 import SearchBar from '../SearchBar/SearchBar';
 import ImageGallery from '../ImageGallery/ImageGallery';
@@ -34,10 +35,12 @@ function App() {
   const [photoForModal, setPhotoForModal] = useState(null);
   const [modalAltDescription, setModalAltDescription] = useState(null);
 
+  const uniqueQueryId = nanoid();
   const handleSubmit = searchQuery => {
-    setPhotosTerm(searchQuery);
+    setPhotosTerm(`${searchQuery}|${uniqueQueryId}`);
     setCurrentPage(1);
     setPhotosData([]);
+    setIsLoading(true);
   };
 
   useEffect(() => {
@@ -48,7 +51,7 @@ function App() {
         setIsLoading(true);
         setError(false);
         const { results, total_pages, total } = await fetchPhotos(
-          photosTerm,
+          photosTerm.split('|')[0],
           currentPage
         );
         setPhotosData(prevPhotos => [...prevPhotos, ...results]);
@@ -95,7 +98,7 @@ function App() {
               <>
                 <div className={css.galleryWrapperTop}>
                   <TotalPhotosInfo
-                    query={photosTerm}
+                    query={photosTerm.split('|')[0]}
                     totalPhotos={totalPhotosNum}
                   />
                   <ClearPhotosBtn onClearPhotos={handleClearPhotos} />
@@ -112,8 +115,10 @@ function App() {
                   lastPageNum > currentPage &&
                   !isLoading && <LoadMoreBtn onloadMore={handleLoadMore} />}
               </>
+            ) : isLoading ? (
+              <Loader />
             ) : somethingSearched ? (
-              <ZeroPhotosFound query={photosTerm} />
+              <ZeroPhotosFound query={photosTerm.split('|')[0]} />
             ) : (
               <NothingSearched />
             )}
