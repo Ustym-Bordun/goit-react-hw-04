@@ -1,0 +1,16 @@
+.container {
+  max-width: 1232px;
+  padding: 0px 16px;
+  /* padding: 30px 50px; */
+  margin: 0 auto;
+
+  /* display: flex; */
+  /* flex-direction: column; */
+
+  /* gap: 30px; */
+
+  /* border: 4px solid rgb(32, 32, 32); */
+  /* border-radius: 30px; */
+
+  /* background: linear-gradient(-45deg, rgb(132, 223, 159), rgb(223, 178, 132)); */
+}

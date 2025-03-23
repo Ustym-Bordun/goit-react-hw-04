@@ -1,0 +1,92 @@
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 15px;
+
+  transition:
+    transform 250ms ease-in-out,
+    border-color 250ms ease-in-out;
+}
+
+.card:hover,
+.card:focus {
+  transform: scale(1.035);
+  border-color: rgb(255, 255, 255);
+}
+
+.img {
+  width: 100%;
+  height: 364px;
+  object-fit: cover;
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.infoBottom {
+  display: flex;
+  justify-content: space-between;
+
+  width: 310px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  margin-bottom: 8px;
+  max-height: 34px;
+  overflow: auto;
+}
+
+/* Стилізація скролу */
+.title::-webkit-scrollbar {
+  width: 7px; /* Тонка смуга */
+}
+.title::-webkit-scrollbar-track {
+  background: transparent; /* Фон */
+}
+.title::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2); /* Колір скролу */
+  border-radius: 3px; /* Закруглені краї */
+}
+.title::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5); /* Темніший при наведенні */
+}
+
+.creator {
+  width: 210px;
+  text-align: left;
+
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+/* Стилізація скролу */
+.creator::-webkit-scrollbar {
+  height: 7px; /* Тонка смуга */
+}
+.creator::-webkit-scrollbar-track {
+  background: transparent; /* Фон */
+}
+.creator::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2); /* Колір скролу */
+  border-radius: 3px; /* Закруглені краї */
+}
+.creator::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5); /* Темніший при наведенні */
+}

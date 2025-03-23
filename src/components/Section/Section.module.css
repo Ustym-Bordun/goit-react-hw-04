@@ -1,0 +1,11 @@
+.section {
+  padding: 20px 0;
+}
+
+.section:first-of-type {
+  padding-top: 0px;
+}
+
+.section:last-of-type {
+  padding-bottom: 0px;
+}

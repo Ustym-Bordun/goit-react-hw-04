@@ -1,0 +1,24 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  height: 40px;
+  padding: 0 16px;
+
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 10px;
+
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(27, 40, 227, 0.85);
+  transition: border-color 250ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  border-color: rgb(255, 255, 255);
+}

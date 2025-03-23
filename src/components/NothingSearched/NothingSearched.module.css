@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.title,
+.text {
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.text {
+  font-size: 20px;
+}
