@@ -1,0 +1,53 @@
+/* .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* .modal-content {
+  position: relative;
+  width: 90vw; 
+  height: 90vh; 
+  max-width: 800px; 
+  max-height: 600px;
+  overflow: hidden;
+  border: none;
+  background: none; 
+  padding: 0;
+} */
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+
+  line-height: 0;
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Затемнення під текстом */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+}

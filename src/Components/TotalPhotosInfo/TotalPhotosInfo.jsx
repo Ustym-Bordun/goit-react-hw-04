@@ -1,10 +1,10 @@
 import css from './TotalPhotosInfo.module.css';
 
-const TotalPhotosInfo = ({ totalPhotos }) => {
+const TotalPhotosInfo = ({ totalPhotos, query }) => {
   return (
-    <div className={css.wrapper}>
-      <p className={css.text}>Total Photos Info : {totalPhotos}</p>
-    </div>
+    <p className={css.text}>
+      We found {totalPhotos} "{query}" photos
+    </p>
   );
 };
 

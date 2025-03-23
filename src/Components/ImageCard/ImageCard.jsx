@@ -9,7 +9,7 @@ const ImageCard = ({
   onOpenModal,
 }) => {
   return (
-    <div
+    <button
       className={css.card}
       onClick={() => onOpenModal(regular, alt_description)}
     >
@@ -23,14 +23,23 @@ const ImageCard = ({
             : "There's no description"
         }
       />
-      <p className={css.text}>Creator: {name}</p>
-      <p className={css.text}>Likes: {likes}</p>
-      <p className={css.text}>
-        {description
-          ? description.slice(0, 1).toUpperCase() + description.slice(1)
-          : "There's no description"}
-      </p>
-    </div>
+      <div className={css.info}>
+        {description && (
+          <p className={css.title}>
+            {description
+              ? description.slice(0, 1).toUpperCase() + description.slice(1)
+              : "There's no description"}
+          </p>
+        )}
+
+        <div className={css.infoBottom}>
+          <p className={css.creator}>
+            Creator: {name.slice(0, 1).toUpperCase() + name.slice(1)}
+          </p>
+          <p className={css.likes}>Likes: {likes}</p>
+        </div>
+      </div>
+    </button>
   );
 };
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-// import Section from '../Section/Section';
-// import Container from '../Container/Container';
+import Section from '../Section/Section';
+import Container from '../Container/Container';
 
 import fetchPhotos from '../../service/imageApi';
 
@@ -85,26 +85,41 @@ function App() {
     <>
       <SearchBar onSubmit={handleSubmit} />
 
-      {error ? (
-        <ErrorMessage />
-      ) : photosData.length > 0 ? (
-        <div className={css.imageGalleryWrapper}>
-          <TotalPhotosInfo totalPhotos={totalPhotosNum} />
-          <ClearPhotosBtn onClearPhotos={handleClearPhotos} />
+      <Section>
+        <Container>
+          <div className={css.galleryWrapper}>
+            <h1 className={css.galleryTitle}>Search gallery</h1>
+            {error ? (
+              <ErrorMessage />
+            ) : photosData.length > 0 ? (
+              <>
+                <div className={css.galleryWrapperTop}>
+                  <TotalPhotosInfo
+                    query={photosTerm}
+                    totalPhotos={totalPhotosNum}
+                  />
+                  <ClearPhotosBtn onClearPhotos={handleClearPhotos} />
+                </div>
 
-          <ImageGallery photos={photosData} onOpenModal={handleOpenModal} />
-        </div>
-      ) : (
-        somethingSearched && <ZeroPhotosFound />
-      )}
+                <ImageGallery
+                  photos={photosData}
+                  onOpenModal={handleOpenModal}
+                />
 
-      {isLoading && <Loader />}
+                {isLoading && <Loader />}
 
-      {photosData.length > 0 && lastPageNum > currentPage && !isLoading && (
-        <LoadMoreBtn onloadMore={handleLoadMore} />
-      )}
-
-      {!somethingSearched && <NothingSearched />}
+                {photosData.length > 0 &&
+                  lastPageNum > currentPage &&
+                  !isLoading && <LoadMoreBtn onloadMore={handleLoadMore} />}
+              </>
+            ) : somethingSearched ? (
+              <ZeroPhotosFound query={photosTerm} />
+            ) : (
+              <NothingSearched />
+            )}
+          </div>
+        </Container>
+      </Section>
 
       <ImageModal
         photo={photoForModal}

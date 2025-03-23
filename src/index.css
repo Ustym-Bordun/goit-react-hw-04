@@ -38,3 +38,7 @@ body {
   color: #000000;
   background-color: #c7ddd3;
 }
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}

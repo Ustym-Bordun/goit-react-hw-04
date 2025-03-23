@@ -8,7 +8,7 @@ const fetchPhotos = async (query, currentPage) => {
     params: {
       query: query,
       page: currentPage,
-      per_page: '2',
+      per_page: '12',
       client_id: 'VlEOoqHux4msB1K3BSCBdDN30mYrRhlLAmkTeHKIeSs',
     },
   });

@@ -5,14 +5,14 @@ import { BeatLoader } from 'react-spinners';
 const Loader = () => (
   // <div className={css.wrapper}>
   <BeatLoader
-    color="#1b29e3"
+    color="rgba(27, 40, 227, 0.85)"
     cssOverride={{
       display: 'flex',
       justifyContent: 'center',
       padding: '4px',
     }}
     margin={3}
-    size={20}
+    size={26}
     speedMultiplier={0.8}
   />
   // </div>

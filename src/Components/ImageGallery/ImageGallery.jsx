@@ -5,8 +5,6 @@ const ImageGallery = ({ photos, onOpenModal }) => {
   return (
     <ul className={css.list}>
       {photos.map(photo => {
-        // console.log(photo);
-
         const {
           id,
           // created_at,
