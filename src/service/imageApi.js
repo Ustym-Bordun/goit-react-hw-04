@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 const fetchPhotos = async (query, currentPage) => {
-  // console.log(query);
-
   const responce = await axios.get('/search/photos', {
     baseURL: 'https://api.unsplash.com/',
     params: {
