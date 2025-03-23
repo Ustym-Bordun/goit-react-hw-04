@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import 'modern-normalize';
 import './index.css';
 
-import App from './Components/App/App';
+import App from './rename/App/App';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
