@@ -35,8 +35,8 @@ function App() {
   const [photoForModal, setPhotoForModal] = useState(null);
   const [modalAltDescription, setModalAltDescription] = useState(null);
 
-  const uniqueQueryId = nanoid();
   const handleSubmit = searchQuery => {
+    const uniqueQueryId = nanoid();
     setPhotosTerm(`${searchQuery}|${uniqueQueryId}`);
     setCurrentPage(1);
     setPhotosData([]);
